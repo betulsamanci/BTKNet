@@ -12,6 +12,16 @@
 * start(npm start)
 * server (npm run server)
 
+<table>
+<tr>
+    <td>start </td>
+    <td>npm start</td>
+</tr>
+<tr>
+    <td>server </td>
+    <td>Value 2</td>
+</tr>
+</table>
 #Git
 > git init
 
