@@ -4,7 +4,7 @@
 *CSS
 *Javascript
 
-##npm
+## npm
 >npm init
 * Node Package Management için package.json dosyası oluşturur.
 
@@ -17,7 +17,7 @@
 |**start**|npm start komutu ile birlikte çalıştırılacak script belirler.|
 |**server**|npm run server  komutu ile birlikte çalıştırılacak script belirler.|
 
-#Git
+# Git
 > git init
 
 > git config --global user.email "email"
@@ -36,9 +36,9 @@
 
 > git push origin -d "branchname"
 
-##JavaScript
+## JavaScript
 
-###Array Üzerinde Dolaşma
+### Array Üzerinde Dolaşma
 ```js
 for(let person of arr){
     const element=document.createElement("div");
