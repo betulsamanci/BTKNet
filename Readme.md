@@ -12,16 +12,11 @@
 * start(npm start)
 * server (npm run server)
 
-<table>
-<tr>
-    <td>start </td>
-    <td>npm start</td>
-</tr>
-<tr>
-    <td>server </td>
-    <td>Value 2</td>
-</tr>
-</table>
+|Script|Açıklama|
+|------|--------|
+|**start**|npm start komutu ile birlikte çalıştırılacak script belirler.|
+|**server**|npm run server  komutu ile birlikte çalıştırılacak script belirler.|
+
 #Git
 > git init
 
@@ -40,3 +35,14 @@
 > git branch -d "branchname"
 
 > git push origin -d "branchname"
+
+##JavaScript
+
+###Array Üzerinde Dolaşma
+```js
+for(let person of arr){
+    const element=document.createElement("div");
+    element.innerHTML=`${person.id} ${person.name} ${person.age}`;
+    document.getElementById("root").append(element);
+}
+```
