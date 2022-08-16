@@ -10,10 +10,16 @@ function App() {
     console.log(numbers);
   };
 
+  const Addnumber=(num)=>{
+    setNumbers([...numbers,num])//rest operator(...)
+    console.log(numbers)
+    
+  }
+
   const shownumber = (number) => {
     setNumbers(numbers.filter((num) => num !== number));
   };
-
+ 
   return (
     <>
       <div>Merhaba React</div>
@@ -25,7 +31,9 @@ function App() {
         </div>
       ))}
 
-      <button onClick={() => sayHello()}>clear all</button>
+<button onClick={() => sayHello()}>clear all</button>
+<button onClick={() => Addnumber(55)}>Add</button>
+     
       <div>
         {numbers.length}
       </div>
