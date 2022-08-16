@@ -1,42 +1,41 @@
 import { useState } from "react";
+import data from "./data";
+
 
 function App() {
-  const [numbers, setNumbers] = useState([1, 2, 3, 4]);
+  console.log(data)
+  const [names, setNames] = useState(data);
 
   //Arrow(ok)
-
   const sayHello = () => {
-    setNumbers([]);
-    console.log(numbers);
+    setNames([]);
+    console.log(names);
   };
 
-  const Addnumber=(num)=>{
-    setNumbers([...numbers,num])//rest operator(...)
-    console.log(numbers)
-    
-  }
-
-  const shownumber = (number) => {
-    setNumbers(numbers.filter((num) => num !== number));
+  const Addnumber = (num) => {
+    setNames([...names, num]); //rest operator(...)
+    console.log(names);
   };
- 
+
+  const showname = (name) => {
+    setNames(names.filter((num) => num !== name));
+  };
+
   return (
     <>
       <div>Merhaba React</div>
 
-      {numbers.map((num, index) => (
+      {names.map((num, index) => (
         <div key={index}>
           {num}
-          <button onClick={() => shownumber(num)}>button</button>
+          <button onClick={() => showname(num)}>Remove</button>
         </div>
       ))}
 
-<button onClick={() => sayHello()}>clear all</button>
-<button onClick={() => Addnumber(55)}>Add</button>
-     
-      <div>
-        {numbers.length}
-      </div>
+      <button onClick={() => sayHello()}>clear all</button>
+      <button onClick={() => Addnumber("BET")}>Add</button>
+
+      <div>{names.length}</div>
     </>
   );
 }
