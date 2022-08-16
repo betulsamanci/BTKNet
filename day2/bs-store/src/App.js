@@ -1,5 +1,5 @@
 import { useState } from "react";
-import data,{tobeaddedbook} from "./data";
+import data, { tobeaddedbook } from "./data";
 
 
 
@@ -18,16 +18,15 @@ function App() {
   };
 
   const removeBook = (id) => {
-    setBooks(books.filter((book) => book.id!== id));
+    setBooks(books.filter((book) => book.id !== id));
   };
-  const AddAll=()=>{
-    setBooks([...books,...tobeaddedbook]);
+  
+  const AddAll = () => {
+    setBooks([...books, ...tobeaddedbook]);
   };
 
   return (
     <>
-     
-
       {books.map((book, index) => (
         <div key={index}>
           {book.title} {book.price}
@@ -36,7 +35,6 @@ function App() {
       ))}
 
       <button onClick={() => clearAll()}>clear all</button>
- 
       <button onClick={() => AddAll(tobeaddedbook)}>Add all</button>
 
     </>
