@@ -1,41 +1,44 @@
 import { useState } from "react";
-import data from "./data";
+import data,{tobeaddedbook} from "./data";
+
 
 
 function App() {
-  console.log(data)
-  const [names, setNames] = useState(data);
+  const [books, setBooks] = useState(data);
 
   //Arrow(ok)
-  const sayHello = () => {
-    setNames([]);
-    console.log(names);
+  const clearAll = () => {
+    setBooks([]);
+    console.log(books);
   };
 
-  const Addnumber = (num) => {
-    setNames([...names, num]); //rest operator(...)
-    console.log(names);
+  const addBook = (book) => {
+    setBooks([...books, book]); //rest operator(...)
+    console.log(books);
   };
 
-  const showname = (name) => {
-    setNames(names.filter((num) => num !== name));
+  const removeBook = (id) => {
+    setBooks(books.filter((book) => book.id!== id));
+  };
+  const AddAll=()=>{
+    setBooks([...books,...tobeaddedbook]);
   };
 
   return (
     <>
-      <div>Merhaba React</div>
+     
 
-      {names.map((num, index) => (
+      {books.map((book, index) => (
         <div key={index}>
-          {num}
-          <button onClick={() => showname(num)}>Remove</button>
+          {book.title} {book.price}
+          <button onClick={() => removeBook(book.id)}>Remove</button>
         </div>
       ))}
 
-      <button onClick={() => sayHello()}>clear all</button>
-      <button onClick={() => Addnumber("BET")}>Add</button>
+      <button onClick={() => clearAll()}>clear all</button>
+ 
+      <button onClick={() => AddAll(tobeaddedbook)}>Add all</button>
 
-      <div>{names.length}</div>
     </>
   );
 }
