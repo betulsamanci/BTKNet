@@ -1,0 +1,16 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+div{
+    border:1px solid pink;
+    padding: 10px;
+    margin: 5px;
+
+}
+div:hover{
+    cursor: pointer;
+    background-color:blueviolet;
+}
